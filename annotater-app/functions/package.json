@@ -1,0 +1,38 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "pre-set": "npm run set-cors && npm run set-project",
+    "set-cors": "npm run set-project && gsutil cors set ../cors.json gs://aiworklabletool.appspot.com",
+    "set-project": "gcloud config set project aiworklabletool && firebase use aiworklabletool"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "json2csv": "^5.0.7",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.7",
+    "node-stream-zip": "^1.15.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/json2csv": "^5.0.3",
+    "@types/node-fetch": "^2.6.2",
+    "@types/uuid": "^8.3.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^3.8.0"
+  },
+  "private": true
+}

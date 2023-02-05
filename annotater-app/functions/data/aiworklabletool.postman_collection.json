@@ -1,0 +1,653 @@
+{
+	"info": {
+		"_postman_id": "cfd3f282-92a2-49a0-9a50-8d4d2d3414ab",
+		"name": "aiworklabletool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14970584"
+	},
+	"item": [
+		{
+			"name": "business",
+			"item": [
+				{
+					"name": "get my profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ADMIN_API}}/me",
+							"host": [
+								"{{ADMIN_API}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iteration_minimum_required\": 3,\r\n    \"tags\": [\"Afghan Hound\", \"Basset\", \"Blenheim Spaniel\", \"Bluetick\", \"chihuahua\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADMIN_API}}/tasks",
+							"host": [
+								"{{ADMIN_API}}"
+							],
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "0985e5fe-8e12-47a3-a936-3dfb80f843e3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ADMIN_API}}/tasks",
+							"host": [
+								"{{ADMIN_API}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get upload image url",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ADMIN_API}}/files/upload/png?task_id=3b226544-2549-4181-a003-261638aa33df&filename=wing.png&content_type=application/jpeg",
+							"host": [
+								"{{ADMIN_API}}"
+							],
+							"path": [
+								"files",
+								"upload",
+								"png"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "3b226544-2549-4181-a003-261638aa33df"
+								},
+								{
+									"key": "filename",
+									"value": "wing.png"
+								},
+								{
+									"key": "content_type",
+									"value": "application/jpeg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ADMIN_API}}/tasks/:task_id/report",
+							"host": [
+								"{{ADMIN_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"report"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "0985e5fe-8e12-47a3-a936-3dfb80f843e3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "validator",
+			"item": [
+				{
+					"name": "get my profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/me",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list task images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks/:task_id/images",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"images"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "b1c781ac-a75b-452a-a05f-e1cc9f97f746"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks/:task_id/images/:image_id",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"images",
+								":image_id"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "b1c781ac-a75b-452a-a05f-e1cc9f97f746"
+								},
+								{
+									"key": "image_id",
+									"value": "1f87f745c7bf72bdffa797a02014a48d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get next task image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks/:task_id/images/:image_id/next",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"images",
+								":image_id",
+								"next"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "b1c781ac-a75b-452a-a05f-e1cc9f97f746"
+								},
+								{
+									"key": "image_id",
+									"value": "bb0eafa7172ec6298c7dbcfd26a5293d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get prev task image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks/:task_id/images/:image_id/prev",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"images",
+								":image_id",
+								"prev"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "b1c781ac-a75b-452a-a05f-e1cc9f97f746"
+								},
+								{
+									"key": "image_id",
+									"value": "66d68a3d8acbcb680a19e1fdcd1d1e6f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{VALIDATOR_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tag\": \"Afghan Hound\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{VALIDATOR_API}}/tasks/:task_id/images/:image_id/validation",
+							"host": [
+								"{{VALIDATOR_API}}"
+							],
+							"path": [
+								"tasks",
+								":task_id",
+								"images",
+								":image_id",
+								"validation"
+							],
+							"variable": [
+								{
+									"key": "task_id",
+									"value": "b1c781ac-a75b-452a-a05f-e1cc9f97f746"
+								},
+								{
+									"key": "image_id",
+									"value": "bb0eafa7172ec6298c7dbcfd26a5293d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get my profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USER_API}}/me",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update my profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wallet\": \"0xA7E9eDbD4d311613963764BD65870c863967A92a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_API}}/me",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "init tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{USER_API}}/tasks",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USER_API}}/tasks/next",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"tasks",
+								"next"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "answer task question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"utask_id\": \"2f532e2d-1539-47c4-b346-81dc83b9812a\",\r\n    \"task_image_id\": \"66d68a3d8acbcb680a19e1fdcd1d1e6f\",\r\n    \"tag\": \"Afghan Hound\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_API}}/tasks/answer",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"tasks",
+								"answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "skip task question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"utask_id\": \"2f532e2d-1539-47c4-b346-81dc83b9812a\",\r\n    \"task_image_id\": \"42d16706297687eda41eeeb67757e2ff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_API}}/tasks/skip",
+							"host": [
+								"{{USER_API}}"
+							],
+							"path": [
+								"tasks",
+								"skip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
